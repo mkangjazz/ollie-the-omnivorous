@@ -1,38 +1,47 @@
-//import logo from './logo.svg';
-//import './App.css';
+import './css/app.css';
+import './css/bootstrap-grid.min.css';
 
-function App() {
+import React, { component, useState, useEffect } from 'react';
+import TitleCard from './components/TitleCard';
+import DiningRoom from './components/DiningRoom';
+import UserInput from './components/UserInput';
+
+export default function App() {
+  const [inputText, setInputText] = useState("");
+
+//  useEffect(() => {
+//    document.title = `${inputText}`;
+//  });
+
+  function _handleSubmit(e) {
+//    e.preventDefault();
+//    setInput({ Input1: "", Input2: "" });
+//    setButton("Submitted");
+//    setTimeout(() => setButton("Button"), 1000);
+//    console.log("Submitted");
+  }
+
   return (
-    <div className="App">
-      <div classname="container">
-        <div classname="row">
-          <div classname="col">
-            <h1>Story</h1>
-            <p classname="ui-story" id="ui-story">
-              A wizard has turned you into a whale. Is this awesome?
-            </p>
-          </div>
-          <div classname="col">
-            <div classname="ui-map" id="ui-map">
-              Map, needs to update position
-            </div>
-            <div classname="ui-inventory" id="ui-inventory">
-              Carrying
-            </div>
-            <div classname="ui-actions" id="ui-actions">            
-            </div>
-            <div classname="ui-user-input" id="ui-user-input">
-              <input autofocus type="text" />
-              <input type="submit" />
-            </div>
-            <div classname="" id="ui-error-message">
-                Invalid command
-            </div>
+    <div className="App py-4">
+      <div className="container container-sm">
+        <div className="row">
+          <div className="col">
+            <main>
+              <div className="ui-story" id="ui-story">
+                <TitleCard />
+              </div>
+              <div className="ui-user-input" id="ui-user-input">
+                <UserInput />
+              </div>
+            </main>
+            <footer>
+              <p>
+                <small>&copy; 2020 Mike Kang</small>
+              </p>
+            </footer>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default App;
