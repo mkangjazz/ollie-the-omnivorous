@@ -1,32 +1,39 @@
 import React, {useState, useEffect } from 'react';
 
-export default function UserInput() {
-  const [inputText, setInputText] = useState("");
+export default function UserInput(props) {
+  function handleSubmit(e) {
+    e.preventDefault();
 
-//  useEffect(() => {
-//    document.title = `${inputText}`;
-//  });
+    var value = e.target[0].value;
 
-  function _handleSubmit(e) {
-//    e.preventDefault();
-//    setInput({ Input1: "", Input2: "" });
-//    setButton("Submitted");
-//    setTimeout(() => setButton("Button"), 1000);
-//    console.log("Submitted");
+    props.setInputCount((inputCount) => inputCount + 1);
+    props.setInputValue((arr) => [...arr, value]);
+    
+    e.target.reset();
   }
 
   return (
-    <label
-      className="d-flex align-items-center"
-      aria-label="Action"
-      htmlFor="user-input"
+    <form
+      aria-label="input an action"
+      onSubmit={handleSubmit}
     >
-      <span>&gt;</span>
+      <label
+        className="d-flex align-items-center"
+        htmlFor="user-input"
+      >
+        <span>&gt;</span>
+        <input
+          autoFocus="autofocus"
+          id="user-input"
+          spellCheck="false"
+          type="text"
+        />
+      </label>
       <input
-        id="user-input"
-        autofocus="autofocus"
-        type="text"
+        className="sr-only"
+        value="submit"
+        type="submit"
       />
-    </label>
+    </form>
   );
 }

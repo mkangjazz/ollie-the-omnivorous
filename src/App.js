@@ -1,26 +1,17 @@
 import './css/app.css';
 import './css/bootstrap-grid.min.css';
 
-import React, { component, useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import TitleCard from './components/TitleCard';
-import DiningRoom from './components/DiningRoom';
+//import DiningRoom from './components/DiningRoom';
 import UserInput from './components/UserInput';
 
 export default function App() {
-  const [inputText, setInputText] = useState("");
+  const [inputCount, setInputCount] = useState(0);
+  const [inputValue, setInputValue] = useState(['']);
 
-//  useEffect(() => {
-//    document.title = `${inputText}`;
-//  });
-
-  function _handleSubmit(e) {
-//    e.preventDefault();
-//    setInput({ Input1: "", Input2: "" });
-//    setButton("Submitted");
-//    setTimeout(() => setButton("Button"), 1000);
-//    console.log("Submitted");
-  }
-
+  console.log('history', inputValue, inputCount);
+  
   return (
     <div className="App py-4">
       <div className="container container-sm">
@@ -29,9 +20,14 @@ export default function App() {
             <main>
               <div className="ui-story" id="ui-story">
                 <TitleCard />
+                <p>Input: {inputValue[inputCount]}</p>
               </div>
               <div className="ui-user-input" id="ui-user-input">
-                <UserInput />
+                <UserInput
+                  inputValue={inputValue}
+                  setInputCount={setInputCount}
+                  setInputValue={setInputValue}
+                />
               </div>
             </main>
             <footer>
