@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 import TitleCard from './components/TitleCard';
 import UserInput from './components/UserInput';
 
-export default function App() {
+export default function App() {  
   const [story, setStory] = useState([
     <TitleCard />,
   ]);

@@ -38,14 +38,10 @@ label {
 
 input[type='text'] {
   border: none;
-  background: none;
-  
+  background: none;  
   color: yellow;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.125em;
-
-  
   display: block;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1em;
   height: 2em;
   outline: none;
@@ -62,4 +58,8 @@ input[type='text'] {
   font-size: 0;
   opacity: 0;
   position: absolute;
+}
+
+.user-input {
+  color: yellow;
 }

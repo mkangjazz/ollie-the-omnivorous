@@ -1,11 +1,33 @@
-//noun = "north" | "south" | "east" | "west" | "house" | "dog"
-
 const nouns = [
+  'bark',
+  'candle',
+  'plant',
+  'play',
+  'dog food',
+  'dogfood',
+  'kibble',
   'east',
   'floor',
+  'food',
   'north',
   'south',
   'west',
+  'house',
+  'homework',
+  'dog',
+  'toy',
+  'try',
+  'stuffed animal',
+  'plushie',  
+  'test',
+  'table',
+  'tv',
+  'wall',
+  'couch',
+  'sofa',
+  'cushion',
+  'armrest',
+  'arm rest', // how do we handle spaces...
 ];
 
 export default nouns;
