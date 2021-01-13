@@ -1,19 +1,17 @@
 import verbs from './verbs';
 import nouns from './nouns';
+import subject_pronouns from './subject_pronouns';
+import object_pronouns from './object_pronouns';
 
-const dictionary = (function() {
-  // var collection = {
-  //   _nouns: nouns,
-  //   _verbs: verbs,
-  // };
-  
+const dictionary = (function() {  
   function Word(str) {
     var o = {};
     
     o.word = str;
     o.part_of_speech = [
       // noun,
-      // pronoun,
+      // subject_pronoun,
+      // object_pronoun,
       // adjective,
       // determiner,
       // verb,
@@ -56,6 +54,8 @@ const dictionary = (function() {
 
   addWordsToDictionary(verbs, 'verb');
   addWordsToDictionary(nouns, 'noun');
+  addWordsToDictionary(subject_pronouns, 'subjectPronoun');
+  addWordsToDictionary(object_pronouns, 'objectPronoun');
 
   return dictionary;
 })();

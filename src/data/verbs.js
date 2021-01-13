@@ -1,8 +1,3 @@
-// setInputCount((inputCount) => inputCount + 1);
-
-// setInputValue((arr) => [...arr, value]);
-//The main commands in text adventures tend to be LOOK3, those for movement (N, E, S, W, NE, NW, SE, SW, UP, DOWN) and those for handling objects (GET, DROP, INVENTORY4), but you'll certainly need others to get anywhere. Most games have a vocabulary of dozens of words and can cope with sentences like 'HANG RED COAT ON HOOK's.
-
 const verbs = [
   'bark',
   'beg',
@@ -10,6 +5,7 @@ const verbs = [
   'chew',
   'chomp',
   'dash',
+  'do',
   'eat',
   'examine',
   'explore',
@@ -29,6 +25,7 @@ const verbs = [
   'run',
   'settle',
   'sit',
+  'take',
   'taste',
   'test',
   'whine',

@@ -1,3 +1,5 @@
+// a noun can be a subject, direct object, indirect object, subject complement, or object of a preposition.
+
 const nouns = [
   'bark',
   'candle',
@@ -10,12 +12,14 @@ const nouns = [
   'floor',
   'food',
   'north',
+  'nothing',
   'south',
   'west',
   'house',
   'homework',
   'dog',
   'toy',
+  'treat',
   'try',
   'stuffed animal',
   'plushie',  
@@ -27,7 +31,7 @@ const nouns = [
   'sofa',
   'cushion',
   'armrest',
-  'arm rest', // how do we handle spaces...
+  'arm rest',
 ];
 
 export default nouns;
