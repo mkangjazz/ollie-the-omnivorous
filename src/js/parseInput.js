@@ -1,25 +1,22 @@
 import splitIntoKnownWords from './splitIntoKnownWords';
 import getTokenLetterString from './getTokenLetterString';
+import isValidIndependentClause from './isValidIndependentClause';
 
 export default function parseInput(userInput) {
   const knownWords = splitIntoKnownWords(userInput);
-//  const knownWordsPOS = knownWords.map(obj => obj.part_of_speech);
-// const hasValidIndependentClause = hasValidIndependentClause(tokenString);
-
-//  console.log(knownWordsPOS);
-  
-//  console.log('tokens', tokens);
 
   if (knownWords) {
     const tokenLetterString = getTokenLetterString(knownWords);
     
-    console.log(tokenLetterString);
+    const isValid = isValidIndependentClause(tokenLetterString);
+    
+   console.log('parseInput', tokenLetterString, isValid);
   }
 
   // what should we return?
   // the text response
   // the valid command (you eat the food)
   // an error message, if error
-
+  // need to update the game state?
   // return words;
 }

@@ -1,5 +1,3 @@
-//import map from '../data/parts_of_speech_map';
-
 export default function getTokenLetterString(words) {
   const tokens = [];
 
@@ -14,5 +12,5 @@ export default function getTokenLetterString(words) {
     tokens.push(arr.join('-'));
   }
 
-  return tokens.join(',');
+  return tokens.join(' ');
 };

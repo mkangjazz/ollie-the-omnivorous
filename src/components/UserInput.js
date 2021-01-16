@@ -3,30 +3,42 @@ import React from 'react';
 import dictionary from '../data/dictionary';
 import parseInput from '../js/parseInput';
 
-export default function UserInput(props) {  
-  function wrapInputText(text) {
-    return <p className="user-input">{text}</p>;
-  }
-
+export default function UserInput(props) {
   function handleSubmit(e) {
     e.preventDefault();
 
     var value = e.target[0].value;
 
-    parseInput(value, dictionary);
+    if (value.trim()) {
+      e.target.reset();
 
-    props.setStory((arr) => [...arr, wrapInputText(value)]);
-    
-    e.target.reset();
+      switch (props.level) {
+        case 'intro':
+          props.setRoom('livingRoom');
+
+          if (props.levels[props.level].answer.indexOf(value) !== -1) {
+            props.setLevel('playing');
+          }
+
+          break;
+        case 'playing':
+          parseInput(value, dictionary);
+
+          props.setAnswer(value);
+          props.setAnswerHistory(prevState => ([...prevState, value]));
+
+          break;
+        default:
+          break;
+      }
+    }
   }
-
-//  const [inputCount, setInputCount] = useState(0);
-//  const [inputValue, setInputValue] = useState(['']);
-//  we should check for valid inputs and then only store those?
 
   return (
     <form
       aria-label="input an action"
+      className="ui-user-input"
+      id="ui-user-input"
       onSubmit={handleSubmit}
     >
       <label
