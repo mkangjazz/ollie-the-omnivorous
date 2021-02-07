@@ -1,36 +1,36 @@
-import React from 'react';
-
-import dictionary from '../data/dictionary';
-import parseInput from '../js/parseInput';
+// import isValidCommand from '../js/isValidCommand';
 
 export default function UserInput(props) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    var value = e.target[0].value;
+    var value = e.target[0].value.trim();
 
-    if (value.trim()) {
-      e.target.reset();
-
-      switch (props.level) {
-        case 'intro':
-          props.setRoom('livingRoom');
-
-          if (props.levels[props.level].answer.indexOf(value) !== -1) {
-            props.setLevel('playing');
-          }
-
+    if (value) {
+      switch (value) {
+        case 'menu':
+          props.setDisplay('menu');
           break;
-        case 'playing':
-          parseInput(value, dictionary);
-
-          props.setAnswer(value);
-          props.setAnswerHistory(prevState => ([...prevState, value]));
-
+        case 'awoo':
+          props.setDisplay('game');
+          break;
+        case 'help':
+          props.setDisplay('help');
+          break;
+        case 'win':
+          props.setDisplay('win');
+          break;
+        case 'lose':
+          props.setDisplay('lose');
           break;
         default:
+          props.setAnswer(value);
+          props.setAnswerHistory(prevState => ([...prevState, value]));
           break;
       }
+
+      e.target.reset();
+      e.target.focus();
     }
   }
 

@@ -1,54 +1,25 @@
 import './css/app.css';
 import './css/bootstrap-grid.min.css';
 
-import data_levels from './data/levels';
-import data_objects from './data/objects';
-import data_rooms from './data/rooms';
+import data_objectives from './data/objectives';
 
-import React, {useState} from 'react';
+// import parseInput from './js/parseInput';
+import React, {useState, useEffect} from 'react';
 
 import UserInput from './components/UserInput';
 import Article from './components/Article';
 
 export default function App() {
-  // feel free to mutate the data NOT as state
-  // const [levels, setLevels] = useState(data_levels);
-  // const [objects, setObjects] = useState(data_objects);
-  // const [rooms, setRooms] = useState(data_rooms);
-
-  const [level, setLevel] = useState('intro');
+  const [display, setDisplay] = useState('menu');
   const [room, setRoom] = useState('');
-
   const [answer, setAnswer] = useState('');
   const [answerHistory, setAnswerHistory] = useState('');
 
-  function getText() {
-  // decouple room from object in the room??
-  // function getPromptText() {
-  // }
-  // function getObjectText() {
-  // }
+  useEffect(() => {
 
-    let text = [];
-
-    switch (level) {
-      case 'intro':
-        text = text.concat(data_levels[level].text);
-        break;
-      case 'playing':
-        // room state
-        // object state
-        text = text.concat(data_rooms[room].text);
-        text = text.concat();
-        break;
-      default:
-        break;
-    }
-
-    return text;
-  }
-
-  console.log('level', level);
+  }, [
+    display,
+  ]);
 
   return (
     <div className="App py-4">
@@ -58,17 +29,14 @@ export default function App() {
             <main>
               <h1>Ollie the Omnivorous</h1>
               <Article
-                text={getText()} 
+                display={display}
+                setDisplay={setDisplay}
               />
               <UserInput
-                level={level}
-                levels={data_levels}
-                objects={data_objects}
-                room={room}
-                rooms={data_rooms}
+                display={display}
                 setAnswer={setAnswer}
                 setAnswerHistory={setAnswerHistory}
-                setLevel={setLevel}
+                setDisplay={setDisplay}
                 setRoom={setRoom}
               />
             </main>

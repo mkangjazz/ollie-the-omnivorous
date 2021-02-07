@@ -1,17 +1,24 @@
+// import dictionary from '../data/dictionary';
+import intro from '../data/intro';
+// import rooms from '../data/rooms';
+
 import splitIntoKnownWords from './splitIntoKnownWords';
 import getTokenLetterString from './getTokenLetterString';
 import isValidIndependentClause from './isValidIndependentClause';
 
-export default function parseInput(userInput) {
-  const knownWords = splitIntoKnownWords(userInput);
+export default function parseInput(input, display) {
+  
+  // const knownWords = splitIntoKnownWords(input);
 
-  if (knownWords) {
-    const tokenLetterString = getTokenLetterString(knownWords);
+  // if (knownWords) {
+  //   const tokenLetterString = getTokenLetterString(knownWords);
     
-    const isValid = isValidIndependentClause(tokenLetterString);
+  //   const isValid = isValidIndependentClause(tokenLetterString);
     
-   console.log('parseInput', tokenLetterString, isValid);
-  }
+  //  console.log('parseInput', tokenLetterString, isValid);
+  // }
+
+  // return true;
 
   // what should we return?
   // the text response

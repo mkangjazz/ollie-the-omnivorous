@@ -1,38 +1,46 @@
-const rooms = {
-  livingRoom: {
+const rooms = [
+  {
+    name: 'living room',
     description: [
-      'living room',
-      'description ipsum dolor',
+      'living room description ipsum dolor',
     ],
-    // position? how do we know where we are?
   },
-  diningRoom: {
-    //
+  {
+    name: 'hallway',
+    description: [
+      'narrow corridor wooden floor several doors',
+    ],
   },
-  kitchen: {
-    //
+  {
+    name: 'dining room',
+    description: [
+      'room with a table and some plants and scraps of food?',
+    ],
   },
-  bathroom: {
+  // kitchen: {
+  //   //
+  // },
+  // bathroom: {
     
-  },
-  masterBedroom: {
+  // },
+  // masterBedroom: {
     
-  },
-  guestBedroom: {
+  // },
+  // guestBedroom: {
     
-  },
-  office: {
+  // },
+  // office: {
     
-  },
-  stairwell: {
+  // },
+  // stairwell: {
     
-  },
-  outdoors: {
+  // },
+  // outdoors: {
     
-  },
-  masterBathroom: {
+  // },
+  // masterBathroom: {
     
-  },
-};
+  // },
+];
 
 export default rooms;
