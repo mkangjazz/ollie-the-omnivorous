@@ -16,5 +16,8 @@ function InteractiveObject(name, description) {
   // isDrinkable
   // isEdible
   // isShreddable
+  // points for eating/consuming
+  // side effects, like makes people anger meter increase
+    // makes you feel sick
 
 export default interactiveObjects;

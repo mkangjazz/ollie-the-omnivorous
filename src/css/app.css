@@ -13,13 +13,8 @@ body {
   font-size: 1.125em;
 }
 
-main, 
-footer {
-  display: block;
-}
-
 main {
-  min-height: calc(100vh);
+  display: block;
 }
 
 h1 {
@@ -63,6 +58,15 @@ input[type='text'] {
 
 .user-input {
   color: yellow;
+}
+
+/* .story-paragraph {
+
+} */
+
+.input-paragraph {
+  color: yellow;
+  text-transform: uppercase;
 }
 
 .ui-user-input label {
