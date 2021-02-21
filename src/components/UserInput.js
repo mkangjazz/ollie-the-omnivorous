@@ -1,3 +1,4 @@
+import parseInput from '../js/parseInput';
 // import isValidCommand from '../js/isValidCommand';
 
 export default function UserInput(props) {
@@ -24,7 +25,10 @@ export default function UserInput(props) {
           props.setDisplay('lose');
           break;
         default:
-          props.setAnswer(value);
+          // need to validate this against state
+          // check value here
+          // props.setAnswer(value);
+          parseInput(value);
           props.setAnswerHistory(prevState => ([...prevState, value]));
           break;
       }
@@ -42,7 +46,6 @@ export default function UserInput(props) {
       onSubmit={handleSubmit}
     >
       <label
-        className="d-flex align-items-center"
         htmlFor="user-input"
       >
         <span>&gt;</span>

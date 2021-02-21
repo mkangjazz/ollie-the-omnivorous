@@ -1,3 +1,8 @@
+.App {
+  margin: 0 auto;
+  max-width: 600px !important;
+}
+
 html {
   background-color: #000;
 }
@@ -50,10 +55,6 @@ input[type='text'] {
   width: 100%;
 }
 
-.container-sm {
-  max-width: 600px !important;
-}
-
 .sr-only {
   font-size: 0;
   opacity: 0;
@@ -62,4 +63,9 @@ input[type='text'] {
 
 .user-input {
   color: yellow;
+}
+
+.ui-user-input label {
+  align-items:center;
+  display: flex;
 }
