@@ -1,6 +1,7 @@
 import React from 'react';
 
 import InputParagraph from './InputParagraph';
+import StoryParagraph from './StoryParagraph';
 
 export default function UserInput(props) {
   function handleInputKeyDown(event) {
@@ -12,14 +13,9 @@ export default function UserInput(props) {
       case "Up":
       case "ArrowUp":
         event.preventDefault();
-        console.log('handleInputEvent, cycle through previous commands');
-        // what if you do it again? and again? -1 needs to be a variable
-        event.target.value = props.inputHistory[props.inputHistory.length - 1];
 
-        break;
-      case "Tab":
-        event.preventDefault();
-        console.log('handleInputEvent tab autocomplete or suggestions');
+        event.target.value = props.inputHistory.length > 0 ? props.inputHistory[props.inputHistory.length - 1] : null;
+        
         break;
       default:
         return;
@@ -36,12 +32,18 @@ export default function UserInput(props) {
       props.setInputHistory((curr) => [...curr, value]);
 
       switch (value) {
-        case 'awoo':
-          // initialize the game first? need state variable somewhere to see if it's valid
-          // props.setDisplay('game');
-          break;
-        case 'help':
-          // append 'help text' to history
+        case 'instructions':
+          props.setHistory((curr) => [
+            ...curr,
+            props.gameData.instructionsText.map((item, index) => (
+              <StoryParagraph
+                key={`item-${index}`}
+              >
+                {item}
+              </StoryParagraph>
+            ))
+          ]);
+
           break;
         case 'win':
           // props.setDisplay('win');
@@ -75,7 +77,7 @@ export default function UserInput(props) {
       >
         <span>&gt;</span>
         <input
-          autoFocus="autofocus"
+          // autoFocus="autofocus"
           id="user-input"
           onKeyDown={handleInputKeyDown}
           spellCheck="false"

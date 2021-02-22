@@ -1,7 +1,6 @@
 export default function Article(props) {
   // we could add on syntax highlighting for recognized interactive objects
   // and rooms
-
   // things to display
     // story description
     // what did i input
@@ -11,6 +10,7 @@ export default function Article(props) {
     <article className="ui-story" id="ui-story">
       {props.history.length > 0
         ? props.history.map((item, index) => {
+            // if it's the last item in the array, add Aria- announcement polite?
             return (
               <div key={`text-${index}`}>
                 {item}

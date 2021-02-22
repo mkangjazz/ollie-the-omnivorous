@@ -1,7 +1,7 @@
 export default function InputParagraph(props) {
   return (
-    <p
-      className='input-paragraph'
+    <p 
+      className='story-paragraph'
       tabIndex='0'
     >
       {props.children}

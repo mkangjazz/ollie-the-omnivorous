@@ -11,6 +11,7 @@ body {
   color: #fff;
   font-family: 'Roboto Mono', monospace;
   font-size: 1.125em;
+  padding: 1em;
 }
 
 main {
@@ -50,6 +51,15 @@ input[type='text'] {
   width: 100%;
 }
 
+:focus {
+  border: none;  
+  outline: 2px dashed yellow;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .sr-only {
   font-size: 0;
   opacity: 0;
@@ -60,12 +70,9 @@ input[type='text'] {
   color: yellow;
 }
 
-/* .story-paragraph {
-
-} */
-
 .input-paragraph {
   color: yellow;
+  margin-left: 1em;
   text-transform: uppercase;
 }
 
